@@ -8,7 +8,17 @@ body {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	background: url(../images/bg.gif);
+	background: #e6f0ff url(../images/bg.gif) repeat;
+}
+
+/* 页面整体容器（所有页面共用的最外层表格） */
+body > table {
+	background-color: rgba(255, 255, 255, 0.96);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
+	overflow: hidden;
+	margin-top: 40px;
+	margin-bottom: 60px;
 }
 
 li {
@@ -28,125 +38,211 @@ p { /*增加中文段落中的首行缩进*/
 
 .text {
 	font-family: "Arial","宋体", "仿宋", sans-serif;  /*使用宋体作为主要字体*/
-	font-size: 12px;
+	font-size: 14px;
 	color: #2B1005;
-	line-height: 17px;
+	line-height: 1.8;
 	font-weight: lighter;
 }
 
-.xmenu0, .xmenu0:active,.xmenu0:link, .xmenu0:visited {
-	text-align:center;
-	font-size:15px;
-	font-weight:bolder;
+/* 正文段落整体宽度和可读性优化 */
+.text p {
+	max-width: 46em;
+	margin-top: 0.4em;
+	margin-bottom: 0.8em;
+}
 
-	color:#250A00;
-	text-decoration:none;
-	display:block;
-	width:100px;
-	float:left;
-	line-height:20px;
-	padding-left: 0px;
-	border-top-width: 0px;
-	border-bottom-width: 0px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #c6d5d8;
-	border-bottom-color: #c6d5d8;
+.text h1, .text h2, .text h3 {
+	margin-top: 0.2em;
+	margin-bottom: 0.4em;
+}
+
+/* 顶部 Banner 欢迎区（不改变原有配色，只做视觉升级） */
+td[bgcolor="#0066CC"] {
+	background: radial-gradient(circle at 0% 0%, #3d8bff 0%, #0066CC 40%, #004c99 100%);
+}
+
+td[bgcolor="#0066CC"] table {
+	width: 100%;
+	height: 140px;
+}
+
+td[bgcolor="#0066CC"] img {
+	filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+}
+
+td[bgcolor="#0066CC"] font[size="+3"] {
+	letter-spacing: 0.12em;
+	font-weight: bold;
+}
+
+td[bgcolor="#0066CC"] font[size="+1"] {
+	opacity: 0.9;
+}
+
+/* 顶部导航栏背景和分隔线（偏白浅蓝，保持轻盈感） */
+td[background*="menu2.png"] {
+	background: linear-gradient(to bottom, #f7fbff 0%, #e1ecff 100%);
+	border-bottom: 1px solid #c0d4f0;
+}
+
+td[background*="menu2.png"] table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+/* 顶部导航区铺满并增加一点过渡感 */
+td[bgcolor="#D9EBFF"] {
+	transition: background-color 0.3s ease;
+}
+
+/* 中文/英文小国旗与菜单对齐 */
+#ch, #en {
+	vertical-align: middle;
+}
+
+
+/* 链接默认样式统一 */
+a {
+	color: #0056b3;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #003d80;
+	text-decoration: underline;
+}
+
+/* 顶部导航文字与交互（浅底色 + 方形tab） */
+.xmenu0,
+.xmenu0:active,
+.xmenu0:link,
+.xmenu0:visited {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+	color: #234060;
+	text-decoration: none;
+	display: inline-block;
+	min-width: 96px;
+	padding: 6px 16px 8px;
+	line-height: 1.2;
+	border-radius: 0;
+	border: 1px solid transparent;
+	transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+	position: relative;
 }
 
 .xmenu0:hover {
-	text-align:center;
-	font-size: 15px;
-	color:#333333;
-	text-decoration:none;
-	display:block;
-	width:100px;
-	float:left;
-	line-height:20px;
-	padding-left: 0px;
-	border-top-width: 0px;
-	border-bottom-width: 0px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #3C1E06;
-	border-bottom-color: #3C1E06;
-	background-color: #FFFFFF;
+	color: #003d80;
+	background-color: #e4f0ff;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+	transform: translateY(0);
 }
 
-.xmenu1, .xmenu1:active,.xmenu1:link, .xmenu1:visited {
-	text-align:left;
-	font-size:13px;
-	font-weight:bolder;
-	color:#250A00;
-	text-decoration:none;
-	display:block;
-	width:150px;
-	float:left;
-	line-height:20px;
-	padding-left: 15px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #c6d5d8;
-	border-bottom-color: #c6d5d8;
+/* 顶部导航悬停下划线高亮条（细线，不改变方形边角） */
+.xmenu0:hover::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -3px;
+	height: 3px;
+	background: #9fc5ff; /* 纯色蓝色底边 */
+	border-radius: 2px;
+	opacity: 0.85;
+}
+
+/* 导航栏中用于占位的“空菜单项”：占一个菜单宽度，把国旗右移 */
+a.xmenu0[href="#"] {
+	opacity: 0;
+	pointer-events: none;
+}
+
+a.xmenu0[href="#"]::after {
+	content: none !important;
+}
+
+/* 当前页导航高亮态：浅底略深边框，仍为方形tab */
+.nav-current,
+.nav-current:link,
+.nav-current:visited {
+	color: #002a5c !important;
+	background: #ffffff;
+	border-color: #98b7e6;
+	box-shadow: 0 0 0 1px rgba(152, 183, 230, 0.7);
+	cursor: default;
+}
+
+.nav-current::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -3px;
+	height: 3px;
+	background: #7fb0ff; /* 纯色蓝色底边 */
+	border-radius: 2px;
+}
+
+.xmenu1,
+.xmenu1:active,
+.xmenu1:link,
+.xmenu1:visited {
+	text-align: left;
+	font-size: 13px;
+	font-weight: 600;
+	color: #123253;
+	text-decoration: none;
+	display: block;
+	width: 170px;
+	line-height: 22px;
+	padding: 4px 8px 4px 10px;
+	border-radius: 0;
+	border: none;
+	background: transparent;
+	border-left: 3px solid transparent;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	margin-bottom: 2px;
 }
 
 .xmenu1:hover {
-	text-align:left;
-	font-size: 13px;
-	color:#333333;
-	text-decoration:none;
-	display:block;
-	width:150px;
-	float:left;
-	line-height:22px;
-	padding-left: 15px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #3C1E06;
-	border-bottom-color: #3C1E06;
-	background-color: #FFFFFF;
+	color: #002a5c;
+	background-color: #e5f0ff;
+	border-left-color: #9fb8e5;
+}
+
+/* 发表论文等页面左侧栏当前项高亮 */
+.side-current,
+.side-current:link,
+.side-current:visited {
+	color: #123253 !important;
+	background: transparent;
+	border-left-color: #356fba;
 }
 
 .xmenu2, .xmenu2:active,.xmenu2:link, .xmenu2:visited {
-	text-align:left;
-	font-size:11px;
-	font-weight:300;
-	color:#250A00;
-	text-decoration:none;
-	display:block;
-	width:150px;
-	float:left;
-	line-height:20px;
-	padding-left: 15px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #c6d5d8;
-	border-bottom-color: #c6d5d8;
+	text-align: left;
+	font-size: 12px;
+	font-weight: 400;
+	color: #183a5f;
+	text-decoration: none;
+	display: block;
+	width: 170px;
+	line-height: 1.35;
+	padding: 4px 8px 4px 10px;
+	border-radius: 0;
+	border: none;
+	background: transparent;
+	border-left: 3px solid transparent;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	margin-bottom: 2px;
 }
 
 .xmenu2:hover {
-	text-align:left;
-	font-size: 11px;
-	color:#333333;
-	text-decoration:none;
-	display:block;
-	width:150px;
-	float:left;
-	line-height:22px;
-	padding-left: 15px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #3C1E06;
-	border-bottom-color: #3C1E06;
-	background-color: #FFFFFF;
+	color: #002a5c;
+	background-color: #eef5ff;
+	border-left-color: #b6c9e9;
 }
 
 .footnote {
