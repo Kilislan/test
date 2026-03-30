@@ -44,9 +44,9 @@ p { /*增加中文段落中的首行缩进*/
 	font-weight: lighter;
 }
 
-/* 正文段落整体宽度和可读性优化 */
+/* 正文段落：与外层 .text 容器同宽（避免 max-width: 46em 导致窄于单元格） */
 .text p {
-	max-width: 46em;
+	max-width: 100%;
 	margin-top: 0.4em;
 	margin-bottom: 0.8em;
 }
@@ -57,27 +57,31 @@ p { /*增加中文段落中的首行缩进*/
 }
 
 /* 顶部 Banner 欢迎区（不改变原有配色，只做视觉升级） */
-td[bgcolor="#0066CC"] {
+.banner {
 	background: radial-gradient(circle at 0% 0%, #3d8bff 0%, #0066CC 40%, #004c99 100%);
 }
 
-td[bgcolor="#0066CC"] table {
+.banner table {
 	width: 100%;
 	height: 140px;
 }
 
-td[bgcolor="#0066CC"] img {
+.banner img {
 	filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
 }
 
-td[bgcolor="#0066CC"] font[size="+3"] {
+.banner font[size="+3"] {
 	letter-spacing: 0.12em;
 	font-weight: bold;
 }
 
-td[bgcolor="#0066CC"] font[size="+1"] {
+.banner font[size="+1"] {
 	opacity: 0.9;
 }
+
+
+
+
 
 /* 顶部导航栏背景和分隔线（偏白浅蓝，保持轻盈感） */
 td[background*="menu2.png"] {

@@ -35,35 +35,41 @@ li {
 	font-weight: lighter;
 }
 
-/* Improve readability for long paragraphs */
+/* Paragraphs inside .text fill the container width */
 .text p {
-	max-width: 46em;
+	max-width: 100%;
 	margin-top: 0.4em;
 	margin-bottom: 0.8em;
 }
 
 /* Banner (keep blue theme, add depth) */
-td[bgcolor="#0066CC"] {
+.banner {
 	background: radial-gradient(circle at 0% 0%, #3d8bff 0%, #0066CC 40%, #004c99 100%);
 }
 
-td[bgcolor="#0066CC"] table {
+.banner table {
 	width: 100%;
 	height: 140px;
 }
 
-td[bgcolor="#0066CC"] img {
+.banner img {
 	filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
 }
 
-td[bgcolor="#0066CC"] font[size="+3"] {
+.banner font[size="+3"] {
 	letter-spacing: 0.06em;
 	font-weight: bold;
 }
 
-td[bgcolor="#0066CC"] font[size="+1"] {
+.banner font[size="+1"] {
 	opacity: 0.9;
 }
+
+/* 限制左侧菜单宽度 */
+.sidebar {
+	width: 191px;
+}
+
 
 /* Top navigation bar (light, matches content background) */
 td[background*="menu2.png"] {
