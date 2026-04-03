@@ -80,8 +80,10 @@ p { /*增加中文段落中的首行缩进*/
 }
 
 
-
-
+/* 限制左侧菜单宽度 */
+.sidebar {
+	width: 191px;
+}
 
 /* 顶部导航栏背景和分隔线（偏白浅蓝，保持轻盈感） */
 td[background*="menu2.png"] {
@@ -263,6 +265,74 @@ a.xmenu0[href="#"]::after {
 	font-family: "Arial","宋体", sans-serif;
 	font-weight: bold;
 	line-height: 25px;
+}
+
+/* 代表性论文：带封面的列表布局（仅在副本页面上使用） */
+.perspective-pub-container {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.perspective-pub-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	margin-bottom: 14px;
+	padding: 10px 12px;
+	border-radius: 8px;
+	background: #f3f7ff;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+	position: relative;
+}
+
+.perspective-pub-item .pub-cover {
+	flex: 0 0 72px;
+	width: 72px;
+	height: 96px;
+	border-radius: 6px;
+	border: 1px solid #c8d8f0;
+	background: #e8eef8;
+	box-shadow: 0 4px 10px rgba(0, 64, 160, 0.18);
+	position: relative;
+	overflow: hidden;
+}
+
+.perspective-pub-item .pub-cover img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.perspective-pub-item .pub-meta {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.perspective-pub-item .pub-meta a {
+	white-space: nowrap;
+}
+
+.perspective-pub-item .pub-meta-main {
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+.perspective-pub-item .pub-actions {
+	position: absolute;
+	right: 12px;
+	bottom: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	align-items: center;
+}
+
+.perspective-pub-item .pub-more {
+	font-size: 12px;
+	color: #0056b3;
+	text-decoration: underline;
 }
 
 /* 正文区内外链小标签统一样式 */
