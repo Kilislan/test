@@ -1,7 +1,7 @@
     // 1. 创建按钮元素（无文字）
     const backToTopBtn = document.createElement('button');
     backToTopBtn.id = 'backToTop';
-
+    
     // 2. 设置按钮样式
     backToTopBtn.style.cssText = `
       position: fixed;
@@ -13,7 +13,7 @@
       background-color: #E6F0FA;
       border: 1px solid rgba(0, 94, 167, 0.2);
       /* 先用内置SVG图标（无需外部PNG，确保能看到按钮） */
-      background-image: url("/images/icon/back.png");
+      background-image: url("/test/images/icon/back.png");
       background-size: 70%;
       background-repeat: no-repeat;
       background-position: center;
