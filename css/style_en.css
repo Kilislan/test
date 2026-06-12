@@ -285,15 +285,15 @@ a.xmenu0[href="#"]::after {
 	text-decoration: underline;
 }
 
-/* External link tags in main content: base style */
-.text a[href$=".pdf"],
-.text a[href$=".PDF"],
-.text a[href$=".pptx"],
-.text a[href*="youtube"],
-.text a[href*="youtu.be"],
-.text a[href*="vimeo"],
-.text a[href*="PPT"],
-.text a[href*="ppt"] {
+/* 正文区内外链小标签统一样式 */
+.publication-list a[href$=".pdf"],
+.publication-list a[href$=".PDF"],
+.publication-list a[href$=".pptx"],
+.publication-list a[href*="youtube"],
+.publication-list a[href*="youtu.be"],
+.publication-list a[href*="vimeo"],
+.publication-list a[href*="PPT"],
+.publication-list a[href*="ppt"] {
 	display: inline-block;
 	vertical-align: baseline;
 	margin-left: 0.25em;
@@ -307,55 +307,55 @@ a.xmenu0[href="#"]::after {
 	transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-/* PDF links: blue tag */
-.text a[href$=".pdf"]:not([href*="PPT"]):not([href*="ppt"]),
-.text a[href$=".PDF"]:not([href*="PPT"]):not([href*="ppt"]) {
+/* PDF 链接：蓝色标签 */
+.publication-list a[href$=".pdf"]:not([href*="PPT"]):not([href*="ppt"]),
+.publication-list a[href$=".PDF"]:not([href*="PPT"]):not([href*="ppt"]) {
 	color: #154a78;
 	background: linear-gradient(180deg, #eef5fc 0%, #dce8f6 100%);
 	border: 1px solid #b3c9e0;
 	box-shadow: 0 1px 2px rgba(0, 51, 102, 0.06);
 }
 
-.text a[href$=".pdf"]:not([href*="PPT"]):not([href*="ppt"]):hover,
-.text a[href$=".PDF"]:not([href*="PPT"]):not([href*="ppt"]):hover {
+.publication-list a[href$=".pdf"]:not([href*="PPT"]):not([href*="ppt"]):hover,
+.publication-list a[href$=".PDF"]:not([href*="PPT"]):not([href*="ppt"]):hover {
 	color: #fff;
 	background: linear-gradient(180deg, #4a8bc8 0%, #2f6faf 100%);
 	border-color: #2a5f91;
 	box-shadow: 0 1px 2px rgba(0, 51, 102, 0.12);
 }
 
-/* PPT / Slides links: orange tag */
-.text a[href*="PPT"],
-.text a[href*="ppt"],
-.text a[href$=".pptx"] {
+/* PPT / Slides 链接：橙色标签 */
+.publication-list a[href*="PPT"],
+.publication-list a[href*="ppt"],
+.publication-list a[href$=".pptx"] {
 	color: #8a5a0c;
 	background: linear-gradient(180deg, #fff8e6 0%, #ffe9b8 100%);
 	border: 1px solid #e6c87a;
 	box-shadow: 0 1px 2px rgba(138, 90, 12, 0.08);
 }
 
-.text a[href*="PPT"]:hover,
-.text a[href*="ppt"]:hover,
-.text a[href$=".pptx"]:hover {
+.publication-list a[href*="PPT"]:hover,
+.publication-list a[href*="ppt"]:hover,
+.publication-list a[href$=".pptx"]:hover {
 	color: #fff;
 	background: linear-gradient(180deg, #d4a012 0%, #b8860b 100%);
 	border-color: #996f09;
 	box-shadow: 0 1px 2px rgba(138, 90, 12, 0.2);
 }
 
-/* Video links: green tag */
-.text a[href*="youtube"],
-.text a[href*="youtu.be"],
-.text a[href*="vimeo"] {
+/* Video 链接：绿色标签 */
+.publication-list a[href*="youtube"],
+.publication-list a[href*="youtu.be"],
+.publication-list a[href*="vimeo"] {
 	color: #0d5c3a;
 	background: linear-gradient(180deg, #e8f8f0 0%, #c8eed9 100%);
 	border: 1px solid #7acba3;
 	box-shadow: 0 1px 2px rgba(13, 92, 58, 0.08);
 }
 
-.text a[href*="youtube"]:hover,
-.text a[href*="youtu.be"]:hover,
-.text a[href*="vimeo"]:hover {
+.publication-list a[href*="youtube"]:hover,
+.publication-list a[href*="youtu.be"]:hover,
+.publication-list a[href*="vimeo"]:hover {
 	color: #fff;
 	background: linear-gradient(180deg, #2da366 0%, #1e7a4d 100%);
 	border-color: #166d40;
